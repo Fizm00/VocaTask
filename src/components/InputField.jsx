@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 function InputField({ label, type, id, placeholder }) {
   return (
@@ -7,7 +7,7 @@ function InputField({ label, type, id, placeholder }) {
         {label}
       </label>
       <input
-        className="w-full p-2 border border-[#a18aff] rounded bg-[#0d0b1e] text-gray-400"
+        className="w-full p-2 border border-[#9E78CF] rounded-lg bg-[#0d0b1e] text-gray-400 placeholder:text-[#777777] focus:border-[#9E78CF] focus:outline-none focus:ring-1 focus:ring-[#9E78CF]"
         type={type}
         id={id}
         placeholder={placeholder}
