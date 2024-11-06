@@ -10,9 +10,9 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Login />} /> {/* Halaman Login */}
-        <Route path="/signup" element={<SignUp />} /> {/* Halaman SignUp */}
-        <Route path="/task" element={<Task />} /> {/* Halaman Task */}
+        <Route path="/" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/task" element={<Task />} />
         <Route path='/editprofile' element={<EditProfile />} />
       </Routes>
     </Router>
