@@ -24,3 +24,27 @@ Built with **Vite**, VocaTask ensures fast development cycles and instant feedba
 ```bash
 git clone https://github.com/your-username/vocatask.git
 cd vocatask
+
+### Install dependencies:
+```bash
+npm install
+
+### Start the development server:
+```bash
+npm run dev
+
+Visit http://localhost:3000 in your browser to start using VocaTask!
+
+## 🚀 How to Use:
+1. Sign Up/Sign In: Create an account or log in to access your personalized dashboard.
+2. Create Tasks: Add new tasks and set deadlines or priorities.
+3. Update Profile: Personalize your profile, including your name, email, and profile picture.
+4. Track Progress: Mark tasks as completed and keep track of your progress! 🎯
+
+## 📚 Documentation:
+- React Documentation
+- Vite Documentation
+- Font Awesome Documentation
+
+## 💬 Feedback & Contributions:
+We love feedback and contributions! If you have suggestions or would like to help improve VocaTask, feel free to open an issue or submit a pull request. 🙌
