@@ -1,4 +1,3 @@
-// src/components/InputField.jsx
 import React from "react";
 
 function InputField({ label, type, id, placeholder, value, onChange }) {
@@ -8,7 +7,7 @@ function InputField({ label, type, id, placeholder, value, onChange }) {
         {label}
       </label>
       <input
-        className="w-full p-2 sm:p-3 border border-[#9E78CF] rounded-lg bg-[#0d0b1e] placeholder:text-[#777777] focus:border-[#9E78CF] focus:outline-none focus:ring-1 focus:ring-[#9E78CF]"
+        className="w-full p-2 sm:p-3 text-gray-400 border border-[#9E78CF] rounded-lg bg-[#0d0b1e] placeholder:text-[#777777] focus:border-[#9E78CF] focus:outline-none focus:ring-1 focus:ring-[#9E78CF]"
         type={type}
         id={id}
         placeholder={placeholder}

@@ -1,4 +1,3 @@
-// src/pages/SignUp.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import InputField from '../components/InputField';
@@ -12,6 +11,7 @@ function SignUp() {
         password: '',
         confirmPassword: '',
     });
+    const [error, setError] = useState('');
 
     const handleChange = (e) => {
         const { id, value } = e.target;
@@ -23,9 +23,30 @@ function SignUp() {
 
     const handleSignUp = (e) => {
         e.preventDefault();
-        // After successful sign-up, navigate to Task page
-        navigate('/task');
-    };
+        const { name, email, password, confirmPassword } = formData;
+      
+        if (password !== confirmPassword) {
+          setError('Passwords do not match');
+          return;
+        }
+      
+        const users = JSON.parse(localStorage.getItem("users")) || {};
+      
+        if (users[email]) {
+          setError('User already exists. Please log in.');
+          return;
+        }
+      
+        const userData = { name, email, password };
+        users[email] = userData; // Save user data under their email
+      
+        localStorage.setItem("users", JSON.stringify(users)); // Save all users
+        localStorage.setItem(`user_${email}`, JSON.stringify(userData)); // Save specific user data
+      
+        alert('Account created successfully!');
+        navigate('/'); // Redirect to login page
+      };
+      
 
     const goToLogin = () => {
         navigate('/');
@@ -41,6 +62,7 @@ function SignUp() {
                     <InputField label="Email" type="email" id="email" placeholder="Enter your email" value={formData.email} onChange={handleChange} />
                     <InputField label="Password" type="password" id="password" placeholder="Enter your password" value={formData.password} onChange={handleChange} />
                     <InputField label="Confirm Password" type="password" id="confirmPassword" placeholder="Confirm your password" value={formData.confirmPassword} onChange={handleChange} />
+                    {error && <p className="text-red-500 text-center">{error}</p>}
                     <Button text="Sign Up" iconClass="fas fa-user-plus" />
                     <p className="text-center text-[#D1B5F5] mt-4">
                         Already have an account?{" "}
