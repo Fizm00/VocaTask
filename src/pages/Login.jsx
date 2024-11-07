@@ -15,23 +15,22 @@ function Login() {
     event.preventDefault();
     const { email, password } = formData;
 
-    const users = JSON.parse(localStorage.getItem("users")) || {};
-
-    const storedUser = users[email];
-
+    const storedUser = JSON.parse(localStorage.getItem(`user_${email}`));
+  
     if (!storedUser) {
       setError("No account found with this email. Please sign up.");
       return;
     }
-
+  
     if (storedUser.password === password) {
       setError("");
-      localStorage.setItem("loggedInUser", email); // Save logged-in user's email
+      localStorage.setItem("loggedInUser", email);
       navigate("/task");
     } else {
       setError("Incorrect password. Please try again.");
     }
   };
+  
 
   const goToSignUp = () => {
     navigate("/signup");
