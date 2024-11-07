@@ -18,11 +18,10 @@ function Profile() {
     const loggedInUser = localStorage.getItem("loggedInUser");
     if (!loggedInUser) return;
   
-    // Load user data using the key user_${loggedInUser}
     const storedUser = JSON.parse(localStorage.getItem(`user_${loggedInUser}`));
     if (storedUser) {
       setUserName(storedUser.name);
-      setProfileUrl(storedUser.profileUrl || ""); // Set profile URL if available
+      setProfileUrl(storedUser.profileUrl || "");
     }
   }, []);
   
