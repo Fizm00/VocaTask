@@ -24,14 +24,17 @@ Built with **Vite**, VocaTask ensures fast development cycles and instant feedba
 ```bash
 git clone https://github.com/your-username/vocatask.git
 cd vocatask
+```
 
 ### Install dependencies:
 ```bash
 npm install
+```
 
 ### Start the development server:
 ```bash
 npm run dev
+```
 
 Visit http://localhost:3000 in your browser to start using VocaTask!
 
